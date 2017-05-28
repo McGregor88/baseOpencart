@@ -12,18 +12,20 @@ body
 
 header
   background-color: #333
-  padding: 7px
+  padding: 7px 0
   .dropdown
     display: inline-block
-    a.dropdown-toggle
-      color: #999
-      font-size: 14px
-      margin-top: 3px 0 0
-      padding: 8px 0 4px
-      display: block
-      &:hover, &:active, &:focus
-        color: #fff
-        text-decoration: none
+    a
+      transition: all .25s ease
+      &.dropdown-toggle
+        color: #999
+        font-size: 14px
+        margin-top: 3px 0 0
+        padding: 8px 0 4px
+        display: block
+        &:hover, &:active, &:focus
+          color: #fff
+          text-decoration: none
 
 ul.col-md-3
   margin: 0
@@ -138,6 +140,32 @@ ul.col-md-3
 
 .top-menu
   margin-bottom: 40px
+
+.list-group-item
+  padding: 12px 15px
+  border-color: #EDEDED
+  transition: background .25s ease, color .25s ease, text-indent .25s ease, border-color .25s ease
+  border:
+    bottom: 1px transparent solid
+    top: 1px transparent solid
+  &:first-child
+    border-radius: 0
+    border-top: 1px #EDEDED solid
+  &:last-child
+    border-radius: 0
+    border-bottom: 1px #EDEDED solid
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover
+	background-color: $blue
+	border-color: $blue
+	color: #fff
+	text-indent: 10px
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover
+	background-color: darken($blue, 5%)
+	border-color: darken($blue, 5%)
+	text-indent: 10px
+
 
 
 @import "media"
